@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>The Agency — IT Solutions</title>
+  <meta name="description" content="The Agency — Professional IT services: Web, Cloud, DevOps, Security, and Consulting.">
+  <style>
+    :root {
+      --accent:#0078D7;
+      --accent-dark:#005A9E;
+      --bg-silver:#E6E6E6;
+      --bg-dark:#1E1E1E;
+      --text-dark:#1A1A1A;
+      --text-light:#f9f9f9;
+      --card:#ffffff;
+      --muted:#5A5A5A;
+      --radius:14px;
+      --shadow:0 8px 30px rgba(0,0,0,0.1);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--text-dark);
+      overflow-x: hidden;
+      background: linear-gradient(270deg, #C0C0C0, #E6E6E6, #A8A8A8);
+      background-size: 600% 600%;
+      animation: gradientShift 20s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    header {
+      background: rgba(30,30,30,0.85);
+      color: var(--text-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(6px);
+    }
+
+    .logo { display: flex; align-items: center; gap: 12px; transition: transform 0.3s; }
+    .logo:hover { transform: scale(1.05); }
+    .logo img { width: 60px; height: 60px; }
+
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    nav a.active::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -5px;
+      width: 100%; height: 2px;
+      background: var(--accent);
+    }
+
+    nav a:hover { color: var(--accent); }
+
+    .hero {
+      text-align: center;
+      padding: 150px 20px;
+      color: var(--text-dark);
+      background: url('') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    .hero h1, .hero p, .hero button { position: relative; z-index: 2; }
+    .hero h1 { font-size: 52px; color: var(--accent-dark); }
+    .hero p { font-size: 18px; color: var(--muted); margin: 20px auto; max-width: 700px; }
+
+    .cta {
+      background: var(--accent);
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: var(--radius);
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .cta:hover { background: var(--accent-dark); transform: translateY(-3px) scale(1.05); }
+
+    section { padding: 60px 50px; position: relative; overflow: hidden; }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .service {
+      perspective: 1000px;
+    }
+
+    .service-inner {
+      position: relative;
+      width: 100%;
+      height: 230px;
+      transform-style: preserve-3d;
+      transition: transform 0.8s;
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+    }
+
+    .service:hover .service-inner { transform: rotateY(180deg); }
+
+    .service-front, .service-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: var(--radius);
+      padding: 30px;
+      background: var(--card);
+    }
+
+    .service-back {
+      transform: rotateY(180deg);
+      background: var(--accent);
+      color: white;
+    }
+
+    .why-us {
+      background: #F5F7FA;
+      text-align: center;
+      padding: 80px 50px;
+    }
+
+    .why-us h2 {
+      color: var(--accent-dark);
+      margin-bottom: 40px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      justify-items: center;
+    }
+
+    .why-item {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 40px 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      max-width: 300px;
+    }
+
+    .why-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+    }
+
+    .why-item i {
+      font-size: 40px;
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+
+    .why-item h3 {
+      margin: 10px 0;
+      color: var(--accent-dark);
+    }
+
+    footer {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="C:\Users\HP PAVILION AERO\Desktop\DAPHINE\TB.web." alt="Logo">
+      <h2>The Agency</h2>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Empowering Digital Transformation</h1>
+    <p>Innovative IT solutions designed to elevate your business performance and digital presence.</p>
+    <button class="cta">Get Started</button>
+  </section>
+
+  <section id="services">
+    <h2 style="text-align:center; color:var(--accent-dark);">Our Core Services</h2>
+    <p style="text-align:center; max-width:800px; margin: 10px auto 50px; color: var(--muted);">
+      We deliver high-quality IT services to help businesses succeed in the digital world. From innovative web development to secure cloud solutions, 
+      our team of experts ensures your technology works for you.
+    </p>
+
+    <div class="services">
+      <div class="service">
+        <div class="service-inner">
+          <div class="service-front">
+            <h3>Web & App Development</h3>
+            <p>Custom, responsive, and user-friendly websites and applications.</p>
+          </div>
+          <div class="service-back">
+            <p>We create fast, scalable, and modern web or mobile applications tailored to your business goals using the latest technologies and frameworks.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="service">
+        <div class="service-inner">
+          <div class="service-front">
+            <h3>Cloud & Hosting Solutions</h3>
+            <p>Reliable and secure cloud infrastructure for your digital operations.</p>
+          </div>
+          <div class="service-back">
+            <p>We help you migrate, manage, and optimize your business on AWS, Azure, or Google Cloud to ensure scalability and high performance.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="service">
+        <div class="service-inner">
+          <div class="service-front">
+            <h3>IT Consultancy & Support</h3>
+            <p>Professional advice and support for seamless technology adoption.</p>
+          </div>
+          <div class="service-back">
+            <p>Our consultants guide your business through every stage of IT integration — from planning to maintenance and technical support.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="service">
+        <div class="service-inner">
+          <div class="service-front">
+            <h3>Cybersecurity Solutions</h3>
+            <p>Safeguard your digital assets from modern cyber threats.</p>
+          </div>
+          <div class="service-back">
+            <p>We offer penetration testing, data protection, and network security services to keep your systems safe and compliant.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 style="text-align:center; color:var(--accent-dark);">About The Agency</h2>
+    <p style="text-align:center; max-width:850px; margin: 20px auto; line-height:1.6;">
+      <strong>The Agency</strong> is a forward-thinking IT company dedicated to delivering transformative technology solutions for businesses of all sizes. 
+      Our mission is to empower organizations through innovation, reliability, and creativity.  
+      <br><br>
+      We bring together a passionate team of developers, designers, and consultants who specialize in crafting digital products that enhance performance 
+      and drive growth. Whether you are a startup looking for your first online presence or an established company seeking digital optimization, 
+      we are your trusted technology partner.
+    </p>
+  </section>
+
+  <section id="why" class="why-us">
+    <h2>Why Choose Us</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <i class="fas fa-user-tie"></i>
+        <h3>Experienced Professionals</h3>
+        <p>Our team consists of highly skilled IT experts with years of industry experience delivering cutting-edge solutions.</p>
+      </div>
+      <div class="why-item">
+        <i class="fas fa-cogs"></i>
+        <h3>Innovative Solutions</h3>
+        <p>We use modern technologies and creative strategies to help your business stand out in a competitive digital landscape.</p>
+      </div>
+      <div class="why-item">
+        <i class="fas fa-lock"></i>
+        <h3>Data Security</h3>
+        <p>Your privacy and security are our top priorities — we implement advanced cybersecurity measures in every solution.</p>
+      </div>
+      <div class="why-item">
+        <i class="fas fa-headset"></i>
+        <h3>24/7 Support</h3>
+        <p>We are always here to assist you with technical help, ensuring your systems run smoothly and efficiently.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="background: var(--bg-silver); padding: 60px 50px;">
+    <h2 style="text-align:center; color:var(--accent-dark);">Contact Us</h2>
+    <form style="max-width: 600px; margin: auto;">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin: 10px 0; border-radius: var(--radius); border: 1px solid var(--bg-dark);">
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin: 10px 0; border-radius: var(--radius); border: 1px solid var(--bg-dark);">
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required style="width: 100%; padding: 10px; margin: 10px 0; border-radius: var(--radius); border: 1px solid var(--bg-dark);"></textarea>
+      </div>
+      <button type="submit" class="cta" style="width: 100%; padding: 15px; background: var(--accent);">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 The Agency™ | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
